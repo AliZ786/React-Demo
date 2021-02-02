@@ -2,6 +2,25 @@
   text-align: center;
 }
 
+.blue{
+
+  color: blue;
+}
+
+.red{
+  color:red;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
