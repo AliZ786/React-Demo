@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import {CardList} from './components/card-list/card-list.component.jsx'
+
+
 import './App.css';
 
 class App extends Component {
@@ -7,30 +10,31 @@ class App extends Component {
     constructor(){
       super();
 
-      this.state ={
+      this.state={
 
-        string: "Where is RahatTheBad? "
-      
+        ssUltimateChar: [ ]
+
+      };
     }
+
+  componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => this.setState({ssUltimateChar: users}));
   }
 
   render() {
     return (
-      <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p class ="red">
-            {this.state.string}
-        </p>
-       <button class ="blue button" onClick={() => this.setState({string : "BhattiR sucks"})}>
-          Change text
-       </button>
-        <br/>
-       <button class = "red button" onClick={() => this.setState({string : "Where is RahatTheBad?"})}>
-          Change to orginal text
-       </button>
+     <div className="App">
+     <CardList name = 'Mario'>
+    
+     {
+      this.state.ssUltimateChar.map(ssUltimateChar => (
+<h1 key = {ssUltimateChar.id}> {ssUltimateChar.name}</h1>
 
-      </header>
+  ))}
+      
+      </CardList>
     </div>
     );
   }
