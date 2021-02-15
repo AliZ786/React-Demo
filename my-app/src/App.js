@@ -26,15 +26,9 @@ class App extends Component {
   render() {
     return (
      <div className="App">
-     <CardList name = 'Mario'>
+     <CardList ssUltimateChar= {this.state.ssUltimateChar}/>
     
-     {
-      this.state.ssUltimateChar.map(ssUltimateChar => (
-<h1 key = {ssUltimateChar.id}> {ssUltimateChar.name}</h1>
 
-  ))}
-      
-      </CardList>
     </div>
     );
   }
